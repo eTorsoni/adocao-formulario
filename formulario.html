@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet & Carinho - Ficha de Adoção</title>
+</head>
+<body>
+
+    <form id="form-adocao" class="card">
+        <h1>🐾 Pet & Carinho 🐾</h1>
+        <h3>Ficha de Adoção de Animais</h3>
+        <hr style="border: 0; border-top: 1px solid hsl(43, 78%, 2%); margin-bottom: 25px;">
+
+        <!-- DADOS DO ADOTANTE -->
+        <label for="nome">Nome Completo:</label>
+        <input type="text" name="nome" id="nome" required autofocus>
+
+        <label for="telefone">Telefone / WhatsApp:</label>
+        <input type="tel" name="telefone" id="telefone" required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" id="endereco" required>
+
+        <fieldset>
+            <legend>Tipo de moradia</legend>
+            <label class="opcao-inline"><input type="radio" name="moradia" value="Casa" required> Casa</label>
+            <label class="opcao-inline"><input type="radio" name="moradia" value="Apartamento"> Apartamento</label>
+        </fieldset>
+
+
+        <label for="especie">Espécie:</label>
+        <select name="especie" id="especie" required>
+            <option value="">Selecione...</option>
+            <option value="Cachorro">Cachorro</option>
+            <option value="Gato">Gato</option>
+            <option value="Outro">Outro</option>
+        </select>
+
+        <label for="raca">Raça / Cor:</label>
+        <input type="text" name="raca" id="raca" required>
+
+        <div class="row-dupla">
+            <div class="campo-metade">
+                <label for="idade">Idade aproximada:</label>
+                <input type="text" name="idade" id="idade" required>
+            </div>
+
+            <div class="campo-metade">
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo" required>
+                    <option value="">Selecione...</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Fêmea">Fêmea</option>
+                </select>
+            </div>
+        </div>
+
+        <label>Já possui outros animais?</label>
+        <label class="opcao-inline"><input type="radio" name="outros" value="Sim" required> Sim</label>
+        <label class="opcao-inline"><input type="radio" name="outros" value="Não"> Não</label>
+
+        <label for="quais">Se sim, quais?</label>
+        <input type="text" name="quais" id="quais">
+
+        <label>Tem condições de cuidar do animal (ração, vacinas e veterinário)?</label>
+        <label class="opcao-inline"><input type="radio" name="condicoes" value="Sim" required> Sim</label>
+        <label class="opcao-inline"><input type="radio" name="condicoes" value="Não"> Não</label>
+
+
+        <label for="termo">Termo de responsabilidade:</label>
+        <textarea id="termo" rows="3" placeholder="Eu declaro que..."></textarea>
+
+
+        <button type="submit" class="btn-enviar">Confirmar Adoção</button>
+
+        <br><br>
+        <a href="formulario.html" style="display:block; text-align:center; color:#000000; text-decoration:none;">
+            &larr; Voltar a página de envio
+        </a>
+    </form>
+
+    <script>
+        document.getElementById('form-adocao').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const dias = new Date().toLocaleDateString();
+
+              const dados = {
+     
+        nome: document.getElementById('nome').value,
+        telefone: document.getElementById('telefone').value,
+        endereco: document.getElementById('endereco').value,
+        moradia: document.querySelector('input[name="moradia"]:checked')?.value || "Não informado",
+
+        especie: document.getElementById('especie').value,
+        raca: document.getElementById('raca').value,
+        idade: document.getElementById('idade').value,
+        sexo: document.getElementById('sexo').value,
+
+        outrosAnimais: document.querySelector('input[name="outros"]:checked')?.value || "Não informado",
+        quais: document.getElementById('quais').value || "Nenhum",
+        condicoes: document.querySelector('input[name="condicoes"]:checked')?.value || "Não informado",
+
+        termo: document.getElementById('termo').value,
+
+        data: dias
+    };
+
+
+            localStorage.setItem('cadastrorealizado', JSON.stringify(dados));
+            window.location.href = 'enviado.html';
+        });
+    </script>
+
+</body>
+</html>

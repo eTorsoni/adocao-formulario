@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet & Carinho - Ficha de Adoção</title>
+    <style>
+       * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f7e6f2; /* Fundo azul claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.portal-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título */
+.header-logo {
+    margin-bottom: 40px;
+}
+
+.header-logo h1 {
+    color: #000000; /* Azul escuro */
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-logo p {
+    color: #355c85;
+    font-size: 1.2em;
+}
+
+/* Grid dos cards do menu */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.menu-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: #1a1a1a;
+    border-bottom: 5px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover */
+.menu-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 64, 150, 0.25);
+    border-bottom: 5px solid #000000; /* Azul vibrante */
+}
+
+/* Ícones */
+.icone {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #000000; /* Azul principal */
+}
+
+/* Títulos dos cards */
+.titulo-card {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000; /* Azul escuro */
+}
+
+/* Descrição dentro dos cards */
+.desc-card {
+    color: #4a6fa5; /* Azul suave */
+    font-size: 0.9em;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 50px;
+    color: #000000;
+    font-size: 0.8em;
+}
+    </style>
+</head>
+<body>
+
+    <div class="portal-container">
+        
+        <div class="header-logo">
+            <h1>Pet & Carinho </h1>
+            <p>Sistema de adoção de animais 🐾</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Link para o Formulário Principal -->
+            <a href="formulario.html" class="menu-item">
+                <div class="icone">🐾</div>
+                <div class="titulo-card">Pet & Carinho </div>
+                <div class="desc-card">Preencha seu formulário</div>
+            </a>
+    </div>
+
+</body>
+</html>
